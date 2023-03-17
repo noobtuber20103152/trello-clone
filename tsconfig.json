@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "redux/reducers/store.js", "redux/reducers/main.js", "redux/reducers/rootReducer.js", "redux/reducers/types.js", "utils/index.js", "firebase/config.tsx"],
   "exclude": ["node_modules"]
 }
