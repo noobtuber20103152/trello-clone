@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth'
 import React from 'react'
-import { db, auth, provider } from '../firebase/config'
+import {  auth } from '../firebase/config'
 function SignOut() {
     const signout = () => {
         signOut(auth)

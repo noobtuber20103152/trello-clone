@@ -1,5 +1,4 @@
 'use client'
-import { Inter } from 'next/font/google'
 import { auth } from "../../firebase/config"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import MainPage from '../../component/mainPage'
