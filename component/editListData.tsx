@@ -17,11 +17,11 @@ function EditListData(props: any) {
     }
     return (
         <>
-            {!editListData && <div className='mx-2 my-2 px-2 flex bg-[rgba(255,254,254,255)] justify-between  py-1 rounded-sm'>
+            {!editListData && <div className='mx-2 my-2 px-2 flex bg-white shadow-lg justify-between  py-1 rounded-sm'>
                 <h1 className='w-11/12'>
                     {props.title}
                 </h1>
-                <AiFillEdit onClick={editList} className='text-xl' />
+                <AiFillEdit onClick={editList} className='text-xl hover:cursor-pointer' />
             </div>}
             {editListData && <div className='mx-2 flex justify-between my-2 bg-[rgba(255,254,254,255)]  py-1 rounded-sm'>
                 <textarea rows={5} onChange={(event) => updateInputField(event, props.id)} className='w-11/12 outline-none px-2' defaultValue={props.title} />
