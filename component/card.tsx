@@ -6,6 +6,7 @@ import { db } from '../firebase/config';
 import { AiOutlineClose } from "react-icons/ai";
 import DeleteList from './delelteList';
 import EditListData from './editListData';
+import Link from 'next/link';
 function Card(props: any) {
     const [inputField, setInputField] = useState(false);
     const [newInputListData, setNewInputListData] = useState("");
@@ -40,32 +41,32 @@ function Card(props: any) {
 
 
     return <>
-        <div className='w-4/12  hover:shadow-xl shadow-lg lg:w-2/12 mx-2 my-4 rounded-sm bg-[#ebecf0] '>
-            <div className='mx-2 my-2 rounded-sm bg-[#ebecf0] px-3 py-2  flex justify-between'>
+        <Link href={`/board/${props.boardId}`} className='w-4/12 hover:cursor-pointer hover:shadow-xl shadow-lg lg:w-2/12 mx-2 my-4 rounded-sm bg-white border '>
+            <div className='mx-2 my-2 rounded-sm px-3 py-2  flex justify-between'>
                 <DeleteList email={props.email} id={props.id} title={props.title} />
             </div>
-            {allListData?.map((e: any) => {
+            {/* {allListData?.map((e: any) => {
                 return <>
                     <EditListData email={props.email} parentId={props.id} id={e.id} title={e.title} />
                 </>
-            })}
-            {inputField &&
+            })} */}
+            {/* {inputField &&
                 <div className='mx-2 my-2 bg-[rgba(255,254,254,255)] px-1 py-1 rounded-sm'>
                     <input value={newInputListData} onChange={inputFieldChange} className='w-full px-2 border' />
-                </div>}
-            {!inputField && <div onClick={addToCard} className='mx-2 my-2 '>
+                </div>} */}
+            {/* {!inputField && <div onClick={addToCard} className='mx-2 my-2 '>
                 <div className='flex hover:cursor-pointer items-center'>
                     <AiOutlinePlus className="text-lg" />
                     <span className='mx-2'>Add a Card</span>
                 </div>
-            </div>}
-            {inputField && <div className='mx-2 my-2 '>
+            </div>} */}
+            {/* {inputField && <div className='mx-2 my-2 '>
                 <div className='flex hover:cursor-pointer items-center'>
                     <AiOutlineClose onClick={cancelListData} className="text-lg" />
                     <span onClick={submitListData} className='mx-2'>Confirm</span>
                 </div>
-            </div>}
-        </div>
+            </div>} */}
+        </Link>
     </>
 }
 

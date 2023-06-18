@@ -5,6 +5,7 @@ import { db,  } from '../firebase/config'
 import PopUp from './popUp';
 import { addDoc, collection, query } from 'firebase/firestore'
 import { useCollection } from 'react-firebase-hooks/firestore'
+import Navbar from './navbar';
 function MainPage(props: any) {
     const listInstance = collection(db, `${props.email}`);
     const q = query(listInstance);
@@ -35,11 +36,11 @@ function MainPage(props: any) {
         setPopUp(!popUp);
     }
     return <>
-    
+        <Navbar addList={addList}/>
         <div className='flex   flex-wrap items-start '>
             {totalList?.map((e: any) => {
                 return <>
-                    <Card  email={props.email} id={e.id} title={e.title} listData={e.works} />
+                    <Card boardId={e.id} email={props.email} id={e.id} title={e.title} listData={e.works} />
                 </>
             })}
             <AddButton addList={addList} />
